@@ -12,9 +12,6 @@ public class PokemonController
 	
 	public PokemonController()
 	{
-		//otherPokemon = new PokemonModel();
-		//pokemonList.add(otherPokemon);
-		
 		myPokemon = new PokemonModel();
 		
 	}
