@@ -49,4 +49,13 @@ public class PokemonModel
 		this.canEvolve = canEvolve;
 	}
 	
+	public String toString()
+	{
+		String description = "This Pokemon is at level " + level + "."
+				+ "\nIt is a" + type + " type." //a" because they might need an n in the type for an
+				+ "\nIt is the color " + color + ","
+				+ "\nand it is " + canEvolve + " that this Pokemon can evolve.";
+				return description;
+	}
+	
 }
