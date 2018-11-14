@@ -33,14 +33,8 @@ public class PokemonController
 	
 	public void lotsOfPokemon()
 	{
-		for (int pokemonMade = 1; pokemonMade < 4; pokemonMade ++)
+		for (int pokemonMade = 1; pokemonMade < 6; pokemonMade ++)
 		{
-		//myPokemon.setLevel(generateLevel());
-		//myPokemon.setType(generateType());
-		//myPokemon.setColor(generateColor());
-		//myPokemon.setCanEvolve(generateCanEvolve());
-		//myPokemon.setDescription(generateDescription());
-		
 		myPokemon.setDescription(generateDescription());
 		pokemonList.add(myPokemon.getDescription());
 		}
@@ -49,7 +43,11 @@ public class PokemonController
 	
 	public int generateLevel()
 	{
-		int level = (int)(Math.random());
+		int level = (int)(Math.random()*20);
+		if(level < 1)
+		{
+			level = level + 1;
+		}
 		return level;
 	}
 	public String generateType()
@@ -83,9 +81,9 @@ public class PokemonController
 		myPokemon.setType(generateType());
 		myPokemon.setColor(generateColor());
 		myPokemon.setCanEvolve(generateCanEvolve());
-		String description = "This Pokemon is at level " + myPokemon.getLevel() + "."
-				+ "\nIt is a" + myPokemon.getType() + " type." //a" because they might need an n in the type for an
-				+ "\nIt is the color " + myPokemon.getColor() + ","
+		String description = "This Pokemon is at level " + myPokemon.getLevel() + ","
+				+ "\nit is a" + myPokemon.getType() + " type," //a" because they might need an n in the type for an
+				+ "\nit is the color " + myPokemon.getColor() + ","
 				+ "\nand it is " + myPokemon.getCanEvolve() + " that this Pokemon can evolve.";
 		
 		return description;
