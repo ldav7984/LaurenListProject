@@ -8,13 +8,12 @@ public class PokemonController
 {
 
 	private PokemonModel myPokemon;
-	private PokemonModel defaultPokemon;
 	private ArrayList<PokemonModel> pokemonList = new ArrayList<PokemonModel>();
 	
 	public PokemonController()
 	{
-		defaultPokemon = new PokemonModel();
-		//pokemonList.add(defaultPokemon);
+		//otherPokemon = new PokemonModel();
+		//pokemonList.add(otherPokemon);
 		
 		myPokemon = new PokemonModel();
 		
@@ -33,14 +32,17 @@ public class PokemonController
 	
 	public void lotsOfPokemon()
 	{
-		for (int pokemonMade = 1; pokemonMade < 6; pokemonMade ++)
+		for (int timesRun = 1; timesRun < 6; timesRun ++)
 		{
 		//myPokemon.setDescription(generateDescription());
 		myPokemon.setLevel(generateLevel());
 		myPokemon.setType(generateType());
 		myPokemon.setColor(generateColor());
 		myPokemon.setCanEvolve(generateCanEvolve());
+		
 		pokemonList.add(myPokemon);
+		myPokemon = new PokemonModel();
+		
 		}
 		
 	}

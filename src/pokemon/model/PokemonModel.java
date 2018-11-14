@@ -14,7 +14,7 @@ public class PokemonModel
 	public PokemonModel()
 	{
 		this.level = 20;
-		this.type = new String("water");
+		this.type = new String(" water");
 		this.color = new String("blue");
 		this.canEvolve = false;
 		
@@ -75,13 +75,10 @@ public class PokemonModel
 		colorsList.add("brown");
 		colorsList.add("magenta");
 		colorsList.add("pink");
-		colorsList.add("lime");
+		colorsList.add("of limes");
 		colorsList.add("aqua");
 		colorsList.add("lilac");
 		colorsList.add("gold");
-		colorsList.add("neon");
-		
-		
 	}
 	
 	public int getLevel()
