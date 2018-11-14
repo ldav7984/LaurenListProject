@@ -25,38 +25,7 @@ public class PokemonModel
 		//buildLists();
 	}
 	
-	public int generateLevel()
-	{
-		level = (int)(Math.random());
-		//setLevel(level);
-		return level;
-	}
-	public String generateType()
-	{
-		int randomIndex = 1; //default
-		randomIndex = (int)(Math.random()*typesList.size());
-		setType(typesList.get(randomIndex));
-		return type;
-	}
-	public String generateColor()
-	{
-		int randomIndex = 1; //default
-		randomIndex = (int)(Math.random()*colorsList.size());
-		setColor(colorsList.get(randomIndex));
-		return color;
-	}
-	public Boolean generateCanEvolve()
-	{
-		int randomIndex = 1; //default
-		randomIndex = (int)(Math.random());
-		canEvolve = false; //defeault
-		if (randomIndex % 10 == 0)
-		{
-			canEvolve = true;
-		}
-		
-		return canEvolve;
-	}
+	
 	
 
 	private void buildLists()

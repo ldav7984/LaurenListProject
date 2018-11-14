@@ -9,7 +9,7 @@ public class PokemonController
 
 	private PokemonModel myPokemon;
 	private PokemonModel defaultPokemon;
-	private PokemonModel anotherPokemon;
+	//private PokemonModel anotherPokemon;
 	private ArrayList<PokemonModel> pokemonList = new ArrayList<PokemonModel>();
 	
 	public PokemonController()
@@ -19,7 +19,7 @@ public class PokemonController
 		
 		myPokemon = new PokemonModel();
 		
-		anotherPokemon = new PokemonModel();
+		//anotherPokemon = new PokemonModel();
 	}
 	
 	public void start()
@@ -28,31 +28,61 @@ public class PokemonController
 	
 		for (PokemonModel pokemon : pokemonList)
 		{
-			JOptionPane.showMessageDialog(null, pokemon);
+			JOptionPane.showMessageDialog(null, pokemon.toString());
 		}
 		
 	}
 	
-	private void lotsOfPokemon()
+	public void lotsOfPokemon()
 	{
-		myPokemon.setLevel(myPokemon.generateLevel());
-		myPokemon.setType(myPokemon.generateType());
-		myPokemon.setColor(myPokemon.generateColor());
-		myPokemon.setCanEvolve(myPokemon.generateCanEvolve());
+		for (int pokemonMade = 1; pokemonMade < 4; pokemonMade ++)
+		{
+		myPokemon.setLevel(generateLevel());
+		myPokemon.setType(generateType());
+		myPokemon.setColor(generateColor());
+		myPokemon.setCanEvolve(generateCanEvolve());
 		pokemonList.add(myPokemon);
+		}
 		
-		
-		defaultPokemon.setLevel(defaultPokemon.generateLevel());
-		defaultPokemon.setType(defaultPokemon.generateType());
-		defaultPokemon.setColor(defaultPokemon.generateColor());
-		defaultPokemon.setCanEvolve(defaultPokemon.generateCanEvolve());
-		pokemonList.add(defaultPokemon);
+		//anotherPokemon.setLevel(generateLevel());
+		//anotherPokemon.setType(generateType());
+		//anotherPokemon.setColor(generateColor());
+		//anotherPokemon.setCanEvolve(generateCanEvolve());
+		//pokemonList.add(anotherPokemon);
 	}
 	
+	public int generateLevel()
+	{
+		int level = (int)(Math.random());
+		return level;
+	}
+	public String generateType()
+	{
+		int randomIndex = 1; //default
+		randomIndex = (int)(Math.random()*myPokemon.getTypesList().size());
+		String type = myPokemon.getTypesList().get(randomIndex);
+		return type;
+	}
+	public String generateColor()
+	{
+		int randomIndex = 1; //default
+		randomIndex = (int)(Math.random()*myPokemon.getColorsList().size());
+		String color = myPokemon.getColorsList().get(randomIndex);
+		return color;
+	}
+	public Boolean generateCanEvolve()
+	{
+		int randomIndex = 1; //default
+		randomIndex = (int)(Math.random());
+		Boolean canEvolve = false; //default
+		if (randomIndex % 10 == 0)
+		{
+			canEvolve = true;
+		}
+		return canEvolve;
+	}
 	//list of attributes
 	//selectParameters method randomly selects ones from the list
 	//PokemonLoop method calls the selectParameters method 3 times and puts each thing in the PokemonList
-	//String description method
-	//For each item in the PokemonList print out their associated descriptions (is that a thing you can do??)
 	
 }
