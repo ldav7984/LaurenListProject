@@ -31,7 +31,6 @@ public class PokemonController
 	{
 		for (int timesRun = 1; timesRun < 8; timesRun ++)
 		{
-		//myPokemon.setDescription(generateDescription());
 		myPokemon.setLevel(generateLevel());
 		myPokemon.setType(generateType());
 		myPokemon.setColor(generateColor());
@@ -59,6 +58,7 @@ public class PokemonController
 		randomIndex = (int)(Math.random()*myPokemon.getTypesList().size());
 		String type = myPokemon.getTypesList().get(randomIndex);
 		
+		//if the type begins with a vowel then the type will have "n " added to the front of it.
 		String firstChar = type.substring(0, 1);
 		if (firstChar.equalsIgnoreCase("a") || firstChar.equalsIgnoreCase("e") 
 				|| firstChar.equalsIgnoreCase("i") || firstChar.equalsIgnoreCase("o") 
