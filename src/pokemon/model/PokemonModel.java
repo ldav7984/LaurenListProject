@@ -42,24 +42,25 @@ public class PokemonModel
 
 	private void buildLists()
 	{
-		typesList.add("n ice");
-		typesList.add("n electric");
-		typesList.add(" grass");
-		typesList.add(" water");
-		typesList.add(" poison");
-		typesList.add(" psychic");
-		typesList.add(" ghost");
-		typesList.add(" steel");
-		typesList.add(" ground");
-		typesList.add(" rock");
-		typesList.add(" normal");
-		typesList.add(" fairy");
-		typesList.add(" flying");
-		typesList.add(" bug");
-		typesList.add(" fire");
-		typesList.add(" fighting");
-		typesList.add(" dragon");
-		typesList.add(" dark");
+		typesList.add("ice");
+		typesList.add("electric");
+		typesList.add("grass");
+		typesList.add("water");
+		typesList.add("poison");
+		typesList.add("psychic");
+		typesList.add("ghost");
+		typesList.add("steel");
+		typesList.add("ground");
+		typesList.add("rock");
+		typesList.add("normal");
+		typesList.add("fairy");
+		typesList.add("flying");
+		typesList.add("bug");
+		typesList.add("fire");
+		typesList.add("fighting");
+		typesList.add("dragon");
+		typesList.add("dark");
+		typesList.add("legendary");
 		
 		
 		colorsList.add("green");
@@ -73,12 +74,19 @@ public class PokemonModel
 		colorsList.add("white");
 		colorsList.add("black");
 		colorsList.add("brown");
+		colorsList.add("tan");
+		colorsList.add("turqoise");
 		colorsList.add("magenta");
 		colorsList.add("pink");
-		colorsList.add("of limes");
+		colorsList.add("cyan");
 		colorsList.add("aqua");
 		colorsList.add("lilac");
 		colorsList.add("gold");
+		colorsList.add("lime");
+		colorsList.add("teal");
+		colorsList.add("apricot");
+		colorsList.add("mint");
+		colorsList.add("lavender");
 	}
 	
 	public int getLevel()

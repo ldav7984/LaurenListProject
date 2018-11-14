@@ -58,6 +58,19 @@ public class PokemonController
 		int randomIndex = 1; //default
 		randomIndex = (int)(Math.random()*myPokemon.getTypesList().size());
 		String type = myPokemon.getTypesList().get(randomIndex);
+		
+		String firstChar = type.substring(0, 1);
+		if (firstChar.equalsIgnoreCase("a") || firstChar.equalsIgnoreCase("e") 
+				|| firstChar.equalsIgnoreCase("i") || firstChar.equalsIgnoreCase("o") 
+				|| firstChar.equalsIgnoreCase("u"))
+		{
+			type = "n " + type;
+		}
+		else
+		{
+			type = " " + type;
+		}
+		
 		return type;
 	}
 	public String generateColor()
