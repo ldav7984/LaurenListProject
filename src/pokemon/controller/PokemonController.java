@@ -7,16 +7,27 @@ import javax.swing.JOptionPane;
 public class PokemonController 
 {
 
-	private Pokemon myPokemon;
+	private PokemonModel myPokemon;
 	
 	public PokemonController()
 	{
-		myPokemon = new Pokemon();
+		myPokemon = new PokemonModel();
 	}
 	
 	public void start()
 	{
 		
+		
+	}
+	
+	private void lotsOfPokemon()
+	{
+		ArrayList<PokemonModel> pokemonList = new ArrayList<PokemonModel>();
+		
+		for (int index = 0; index < pokemonList.size(); index += 1)
+		{
+			pokemonList.add(myPokemon);
+		}
 		
 	}
 	

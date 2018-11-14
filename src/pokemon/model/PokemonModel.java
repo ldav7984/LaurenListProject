@@ -7,7 +7,7 @@ public class PokemonModel
 	private String color;
 	private Boolean canEvolve;
 	
-	public Pokemon(int level, String type, String color, Boolean canEvolve)
+	public PokemonModel(int level, String type, String color, Boolean canEvolve)
 	{
 		this.level = level;
 		this.type = type;
