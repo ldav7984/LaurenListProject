@@ -146,9 +146,9 @@ public class PokemonModel
 	
 	public String toString()
 	{
-		String description = "This Pokemon is at level " + level + "."
-				+ "\nIt is a" + type + " type." //a" because they might need an n in the type for an
-				+ "\nIt is the color " + color + ","
+		String description = "This Pokemon is at level " + level + ","
+				+ "\nit is a" + type + " type," //a" because they might need an n in the type for an
+				+ "\nit is the color " + color + ","
 				+ "\nand it is " + canEvolve + " that this Pokemon can evolve.";
 				return description;
 	}
