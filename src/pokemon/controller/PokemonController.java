@@ -29,6 +29,7 @@ public class PokemonController
 			pokemonList.add(myPokemon);
 		}
 		
+		
 	}
 	
 	//list of attributes

@@ -1,4 +1,5 @@
 package pokemon.model;
+import java.util.ArrayList;
 
 public class PokemonModel 
 {
@@ -6,6 +7,13 @@ public class PokemonModel
 	private String type;
 	private String color;
 	private Boolean canEvolve;
+	private ArrayList<String> typesList;
+	private ArrayList<String> colorsList;
+	
+	public PokemonModel()
+	{
+		buildLists();
+	}
 	
 	public PokemonModel(int level, String type, String color, Boolean canEvolve)
 	{
@@ -13,6 +21,51 @@ public class PokemonModel
 		this.type = type;
 		this.color = color;
 		this.canEvolve = canEvolve;
+		buildLists();
+	}
+	
+	public void buildLists()
+	{
+		typesList.add(" grass");
+		typesList.add(" water");
+		typesList.add(" n ice");
+		typesList.add(" electric");
+		typesList.add(" poison");
+		typesList.add(" psychic");
+		typesList.add(" ghost");
+		typesList.add(" steel");
+		typesList.add(" ground");
+		typesList.add(" rock");
+		typesList.add(" normal");
+		typesList.add(" fairy");
+		typesList.add(" flying");
+		typesList.add(" bug");
+		typesList.add(" fire");
+		typesList.add(" fighting");
+		typesList.add(" dragon");
+		typesList.add(" dark");
+		
+		
+		colorsList.add("green");
+		colorsList.add("red");
+		colorsList.add("blue");
+		colorsList.add("yellow");
+		colorsList.add("gray");
+		colorsList.add("orange");
+		colorsList.add("purple");
+		colorsList.add("yellow");
+		colorsList.add("white");
+		colorsList.add("black");
+		colorsList.add("brown");
+		colorsList.add("magenta");
+		colorsList.add("pink");
+		colorsList.add("lime");
+		colorsList.add("aqua");
+		colorsList.add("lilac");
+		colorsList.add("gold");
+		colorsList.add("neon");
+		
+		
 	}
 	
 	public int getLevel()
@@ -31,6 +84,15 @@ public class PokemonModel
 	{
 		return canEvolve;
 	}
+	public ArrayList<String> getTypesList()
+	{
+		return typesList;
+	}
+	public ArrayList<String> getColorsList()
+	{
+		return colorsList;
+	}
+	
 	
 	public void setLevel(int level)
 	{
@@ -48,6 +110,15 @@ public class PokemonModel
 	{
 		this.canEvolve = canEvolve;
 	}
+	public void setTypesList(ArrayList<String> typesList)
+	{
+		this.typesList = typesList;
+	}
+	public void setColorsList(ArrayList<String> colorsList)
+	{
+		this.colorsList = colorsList;
+	}
+	
 	
 	public String toString()
 	{
