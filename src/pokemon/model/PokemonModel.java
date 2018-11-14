@@ -24,6 +24,38 @@ public class PokemonModel
 		buildLists();
 	}
 	
+	public int generateLevel()
+	{
+		level = (int)(Math.random());
+		//setLevel(level);
+		return level;
+	}
+	public String generateType()
+	{
+		int randomIndex = 1; //default
+		randomIndex = (int)(Math.random()*typesList.size());
+		return type;
+	}
+	public String generateColor()
+	{
+		int randomIndex = 1; //default
+		randomIndex = (int)(Math.random()*colorsList.size());
+		return color;
+	}
+	public Boolean generateCanEvolve()
+	{
+		int randomIndex = 1; //default
+		randomIndex = (int)(Math.random()*colorsList.size());
+		canEvolve = false; //defeault
+		if (randomIndex % 10 == 0)
+		{
+			canEvolve = true;
+		}
+		
+		return canEvolve;
+	}
+	
+
 	public void buildLists()
 	{
 		typesList.add(" grass");

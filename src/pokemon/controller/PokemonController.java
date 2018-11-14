@@ -8,6 +8,7 @@ public class PokemonController
 {
 
 	private PokemonModel myPokemon;
+	private ArrayList<PokemonModel> pokemonList = new ArrayList<PokemonModel>();
 	
 	public PokemonController()
 	{
@@ -16,18 +17,26 @@ public class PokemonController
 	
 	public void start()
 	{
-		
+		for (PokemonModel pokemon : pokemonList)
+		{
+			JOptionPane.showMessageDialog(null, myPokemon);
+		}
 		
 	}
 	
 	private void lotsOfPokemon()
 	{
-		ArrayList<PokemonModel> pokemonList = new ArrayList<PokemonModel>();
+		myPokemon.setLevel(myPokemon.generateLevel());
+		myPokemon.setType(myPokemon.generateType());
+		myPokemon.setColor(myPokemon.generateColor());
+		myPokemon.setCanEvolve(myPokemon.generateCanEvolve());
+		
 		
 		for (int index = 0; index < pokemonList.size(); index += 1)
 		{
 			pokemonList.add(myPokemon);
 		}
+		
 		
 		
 	}
