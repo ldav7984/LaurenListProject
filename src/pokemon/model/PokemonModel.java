@@ -42,10 +42,10 @@ public class PokemonModel
 
 	private void buildLists()
 	{
+		typesList.add("n ice");
+		typesList.add("n electric");
 		typesList.add(" grass");
 		typesList.add(" water");
-		typesList.add("n ice");
-		typesList.add(" electric");
 		typesList.add(" poison");
 		typesList.add(" psychic");
 		typesList.add(" ghost");

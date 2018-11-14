@@ -29,7 +29,7 @@ public class PokemonController
 	
 	public void lotsOfPokemon()
 	{
-		for (int timesRun = 1; timesRun < 6; timesRun ++)
+		for (int timesRun = 1; timesRun < 8; timesRun ++)
 		{
 		//myPokemon.setDescription(generateDescription());
 		myPokemon.setLevel(generateLevel());
@@ -70,27 +70,13 @@ public class PokemonController
 	public Boolean generateCanEvolve()
 	{
 		int randomIndex = 1; //default
-		randomIndex = (int)(Math.random());
 		Boolean canEvolve = false; //default
+		randomIndex = (int)(Math.random()*3);
 		if (randomIndex % 10 == 0)
 		{
 			canEvolve = true;
 		}
 		return canEvolve;
 	}
-	//public String generateDescription()
-	//{
-	//	myPokemon.setLevel(generateLevel());
-	//	myPokemon.setType(generateType());
-	//	myPokemon.setColor(generateColor());
-	//	myPokemon.setCanEvolve(generateCanEvolve());
-	//	String description = "This Pokemon is at level " + myPokemon.getLevel() + ","
-	//			+ "\nit is a" + myPokemon.getType() + " type," //a" because they might need an n in the type for an
-	//			+ "\nit is the color " + myPokemon.getColor() + ","
-	//			+ "\nand it is " + myPokemon.getCanEvolve() + " that this Pokemon can evolve.";
-	//	
-	//	return description;
-	//}
-	
 	
 }
