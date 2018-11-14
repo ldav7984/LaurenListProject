@@ -8,18 +8,27 @@ public class PokemonController
 {
 
 	private PokemonModel myPokemon;
+	private PokemonModel defaultPokemon;
+	private PokemonModel anotherPokemon;
 	private ArrayList<PokemonModel> pokemonList = new ArrayList<PokemonModel>();
 	
 	public PokemonController()
 	{
+		defaultPokemon = new PokemonModel(20, "water", "blue", false);
+		pokemonList.add(defaultPokemon);
+		
 		myPokemon = new PokemonModel();
+		
+		anotherPokemon = new PokemonModel();
 	}
 	
 	public void start()
 	{
+		lotsOfPokemon();
+	
 		for (PokemonModel pokemon : pokemonList)
 		{
-			JOptionPane.showMessageDialog(null, myPokemon);
+			JOptionPane.showMessageDialog(null, pokemon);
 		}
 		
 	}
@@ -30,15 +39,14 @@ public class PokemonController
 		myPokemon.setType(myPokemon.generateType());
 		myPokemon.setColor(myPokemon.generateColor());
 		myPokemon.setCanEvolve(myPokemon.generateCanEvolve());
+		pokemonList.add(myPokemon);
 		
 		
-		for (int index = 0; index < pokemonList.size(); index += 1)
-		{
-			pokemonList.add(myPokemon);
-		}
-		
-		
-		
+		defaultPokemon.setLevel(defaultPokemon.generateLevel());
+		defaultPokemon.setType(defaultPokemon.generateType());
+		defaultPokemon.setColor(defaultPokemon.generateColor());
+		defaultPokemon.setCanEvolve(defaultPokemon.generateCanEvolve());
+		pokemonList.add(defaultPokemon);
 	}
 	
 	//list of attributes

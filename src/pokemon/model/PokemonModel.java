@@ -17,11 +17,12 @@ public class PokemonModel
 	
 	public PokemonModel(int level, String type, String color, Boolean canEvolve)
 	{
+		buildLists();
 		this.level = level;
 		this.type = type;
 		this.color = color;
 		this.canEvolve = canEvolve;
-		buildLists();
+		//buildLists();
 	}
 	
 	public int generateLevel()
@@ -34,18 +35,20 @@ public class PokemonModel
 	{
 		int randomIndex = 1; //default
 		randomIndex = (int)(Math.random()*typesList.size());
+		setType(typesList.get(randomIndex));
 		return type;
 	}
 	public String generateColor()
 	{
 		int randomIndex = 1; //default
 		randomIndex = (int)(Math.random()*colorsList.size());
+		setColor(colorsList.get(randomIndex));
 		return color;
 	}
 	public Boolean generateCanEvolve()
 	{
 		int randomIndex = 1; //default
-		randomIndex = (int)(Math.random()*colorsList.size());
+		randomIndex = (int)(Math.random());
 		canEvolve = false; //defeault
 		if (randomIndex % 10 == 0)
 		{
@@ -56,7 +59,7 @@ public class PokemonModel
 	}
 	
 
-	public void buildLists()
+	private void buildLists()
 	{
 		typesList.add(" grass");
 		typesList.add(" water");
