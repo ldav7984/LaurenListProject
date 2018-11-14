@@ -9,26 +9,24 @@ public class PokemonController
 
 	private PokemonModel myPokemon;
 	private PokemonModel defaultPokemon;
-	//private PokemonModel anotherPokemon;
-	private ArrayList<PokemonModel> pokemonList = new ArrayList<PokemonModel>();
+	private ArrayList<String> pokemonList = new ArrayList<String>();
 	
 	public PokemonController()
 	{
-		defaultPokemon = new PokemonModel(20, "water", "blue", false);
-		pokemonList.add(defaultPokemon);
+		defaultPokemon = new PokemonModel();
+		//pokemonList.add(defaultPokemon);
 		
 		myPokemon = new PokemonModel();
 		
-		//anotherPokemon = new PokemonModel();
 	}
 	
 	public void start()
 	{
 		lotsOfPokemon();
 	
-		for (PokemonModel pokemon : pokemonList)
+		for (String pokemonDescription : pokemonList)
 		{
-			JOptionPane.showMessageDialog(null, pokemon.toString());
+			JOptionPane.showMessageDialog(null, pokemonDescription);
 		}
 		
 	}
@@ -37,18 +35,16 @@ public class PokemonController
 	{
 		for (int pokemonMade = 1; pokemonMade < 4; pokemonMade ++)
 		{
-		myPokemon.setLevel(generateLevel());
-		myPokemon.setType(generateType());
-		myPokemon.setColor(generateColor());
-		myPokemon.setCanEvolve(generateCanEvolve());
-		pokemonList.add(myPokemon);
+		//myPokemon.setLevel(generateLevel());
+		//myPokemon.setType(generateType());
+		//myPokemon.setColor(generateColor());
+		//myPokemon.setCanEvolve(generateCanEvolve());
+		//myPokemon.setDescription(generateDescription());
+		
+		myPokemon.setDescription(generateDescription());
+		pokemonList.add(myPokemon.getDescription());
 		}
 		
-		//anotherPokemon.setLevel(generateLevel());
-		//anotherPokemon.setType(generateType());
-		//anotherPokemon.setColor(generateColor());
-		//anotherPokemon.setCanEvolve(generateCanEvolve());
-		//pokemonList.add(anotherPokemon);
 	}
 	
 	public int generateLevel()
@@ -80,6 +76,19 @@ public class PokemonController
 			canEvolve = true;
 		}
 		return canEvolve;
+	}
+	public String generateDescription()
+	{
+		myPokemon.setLevel(generateLevel());
+		myPokemon.setType(generateType());
+		myPokemon.setColor(generateColor());
+		myPokemon.setCanEvolve(generateCanEvolve());
+		String description = "This Pokemon is at level " + myPokemon.getLevel() + "."
+				+ "\nIt is a" + myPokemon.getType() + " type." //a" because they might need an n in the type for an
+				+ "\nIt is the color " + myPokemon.getColor() + ","
+				+ "\nand it is " + myPokemon.getCanEvolve() + " that this Pokemon can evolve.";
+		
+		return description;
 	}
 	//list of attributes
 	//selectParameters method randomly selects ones from the list

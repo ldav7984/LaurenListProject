@@ -7,22 +7,34 @@ public class PokemonModel
 	private String type;
 	private String color;
 	private Boolean canEvolve;
+	private String description;
 	private ArrayList<String> typesList;
 	private ArrayList<String> colorsList;
 	
 	public PokemonModel()
 	{
+		this.level = 20;
+		this.type = new String("water");
+		this.color = new String("blue");
+		this.canEvolve = false;
+		
+		this.typesList = new ArrayList<String>();
+		this.colorsList = new ArrayList<String>();
+		
 		buildLists();
 	}
 	
-	public PokemonModel(int level, String type, String color, Boolean canEvolve)
+	public PokemonModel(int level, String type, String color, Boolean canEvolve, 
+			ArrayList<String> typesList, ArrayList<String> colorsList)
 	{
-		buildLists();
+		this.typesList = getTypesList();
+		this.colorsList = getColorsList();
+		
 		this.level = level;
 		this.type = type;
 		this.color = color;
 		this.canEvolve = canEvolve;
-		//buildLists();
+		buildLists();
 	}
 	
 	
@@ -32,7 +44,7 @@ public class PokemonModel
 	{
 		typesList.add(" grass");
 		typesList.add(" water");
-		typesList.add(" n ice");
+		typesList.add("n ice");
 		typesList.add(" electric");
 		typesList.add(" poison");
 		typesList.add(" psychic");
@@ -88,6 +100,10 @@ public class PokemonModel
 	{
 		return canEvolve;
 	}
+	public String getDescription()
+	{
+		return description;
+	}
 	public ArrayList<String> getTypesList()
 	{
 		return typesList;
@@ -113,6 +129,10 @@ public class PokemonModel
 	public void setCanEvolve(Boolean canEvolve)
 	{
 		this.canEvolve = canEvolve;
+	}
+	public void setDescription(String description)
+	{
+		this.description = description;
 	}
 	public void setTypesList(ArrayList<String> typesList)
 	{
