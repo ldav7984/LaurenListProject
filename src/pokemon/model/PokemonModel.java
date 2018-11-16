@@ -1,6 +1,9 @@
 package pokemon.model;
 import java.util.ArrayList;
 
+import pokemon.controller.PokemonController;
+import javax.swing.ImageIcon;
+
 public class PokemonModel 
 {
 	private int level;
@@ -8,13 +11,15 @@ public class PokemonModel
 	private String color;
 	private boolean canEvolve;
 	private String description;
+	
 	private ArrayList<String> typesList;
 	private ArrayList<String> colorsList;
+	
 	
 	public PokemonModel()
 	{
 		this.level = 20;
-		this.type = new String(" water");
+		this.type = new String("water");
 		this.color = new String("blue");
 		this.canEvolve = false;
 		
@@ -34,6 +39,7 @@ public class PokemonModel
 		this.type = type;
 		this.color = color;
 		this.canEvolve = canEvolve;
+		
 		buildLists();
 	}
 	
@@ -101,7 +107,7 @@ public class PokemonModel
 	{
 		return color;
 	}
-	public Boolean getCanEvolve()
+	public boolean getCanEvolve()
 	{
 		return canEvolve;
 	}

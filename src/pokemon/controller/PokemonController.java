@@ -2,19 +2,31 @@ package pokemon.controller;
 
 import pokemon.model.PokemonModel;
 import java.util.ArrayList;
+
+
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+
+import pokemon.model.PokemonModel;
 
 public class PokemonController 
 {
-
+	private PokemonModel[] pokemonArray;
+	private ImageIcon [] icons;
+	
 	private PokemonModel myPokemon;
 	private ArrayList<PokemonModel> pokemonList = new ArrayList<PokemonModel>();
+	
 	
 	public PokemonController()
 	{
 		myPokemon = new PokemonModel();
 		
+		icons = new ImageIcon[6];
+		pokemonArray = new PokemonModel[10];
 	}
+	
+	
 	
 	public void start()
 	{
