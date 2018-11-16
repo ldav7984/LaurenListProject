@@ -23,15 +23,8 @@ public class PokemonController
 		
 		icons = new ImageIcon[1];
 		icons[0] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
-		//icons[1] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
-		//icons[2] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
-		//icons[3] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
-		//icons[4] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
-		//icons[5] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
 		
 		pokemonArray = new PokemonModel[10];
-		
-		
 		
 	}
 	
@@ -47,7 +40,11 @@ public class PokemonController
 		//{
 		//	JOptionPane.showMessageDialog(null, pokemon);
 		//}
-		JOptionPane.showMessageDialog(null,  "",  "Arrays",  JOptionPane.INFORMATION_MESSAGE, icons[0]);
+		for (PokemonModel currentPokemon : pokemonArray)
+		{
+			JOptionPane.showMessageDialog(null, currentPokemon, "Pokemon", JOptionPane.INFORMATION_MESSAGE, icons[0]);
+		}
+		//JOptionPane.showMessageDialog(null,  "",  "Arrays",  JOptionPane.INFORMATION_MESSAGE, icons[0]);
 		
 	}
 	
@@ -71,9 +68,10 @@ public class PokemonController
 		myPokemon.setCanEvolve(generateCanEvolve());
 		pokemonList.add(myPokemon);
 		
-		pokemonArray[index] = new PokemonModel(myPokemon.getLevel(), myPokemon.getType(), myPokemon.getColor(), 
-					myPokemon.getCanEvolve(), myPokemon.getTypesList(), myPokemon.getColorsList());
+		//pokemonArray[index] = new PokemonModel(myPokemon.getLevel(), myPokemon.getType(), myPokemon.getColor(), 
+		//			myPokemon.getCanEvolve(), myPokemon.getTypesList(), myPokemon.getColorsList());
 		
+		pokemonArray[index] = myPokemon;
 		myPokemon = new PokemonModel();
 		
 		//if (index % 2 == 0)
