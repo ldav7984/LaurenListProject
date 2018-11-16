@@ -1,9 +1,6 @@
 package pokemon.model;
 import java.util.ArrayList;
 
-import pokemon.controller.PokemonController;
-import javax.swing.ImageIcon;
-
 public class PokemonModel 
 {
 	private int level;
@@ -68,6 +65,8 @@ public class PokemonModel
 		typesList.add("dark");
 		typesList.add("legendary");
 		
+		setTypesList(typesList);
+		
 		
 		colorsList.add("green");
 		colorsList.add("red");
@@ -93,6 +92,8 @@ public class PokemonModel
 		colorsList.add("apricot");
 		colorsList.add("mint");
 		colorsList.add("lavender");
+		
+		setColorsList(colorsList);
 	}
 	
 	public int getLevel()

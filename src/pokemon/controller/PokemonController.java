@@ -21,26 +21,17 @@ public class PokemonController
 	{
 		myPokemon = new PokemonModel();
 		
-		icons = new ImageIcon[6];
-		icons[0] = new ImageIcon(getClass().getResource("/LaurenListProject/src/pokemon/view/images/Pokeball.png"));
-		icons[1] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
-		icons[2] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
-		icons[3] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
-		icons[4] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
-		icons[5] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
-		
+		icons = new ImageIcon[1];
+		icons[0] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
+		//icons[1] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
+		//icons[2] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
+		//icons[3] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
+		//icons[4] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
+		//icons[5] = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
 		
 		pokemonArray = new PokemonModel[10];
-		pokemonArray[0] = new PokemonModel();
-		pokemonArray[1] = new PokemonModel();
-		pokemonArray[2] = new PokemonModel();
-		pokemonArray[3] = new PokemonModel();
-		pokemonArray[4] = new PokemonModel();
-		pokemonArray[5] = new PokemonModel();
-		pokemonArray[6] = new PokemonModel();
-		pokemonArray[7] = new PokemonModel();
-		pokemonArray[8] = new PokemonModel();
-		pokemonArray[9] = new PokemonModel();
+		
+		
 		
 	}
 	
@@ -56,49 +47,45 @@ public class PokemonController
 		//{
 		//	JOptionPane.showMessageDialog(null, pokemon);
 		//}
-		JOptionPane.showMessageDialog(null,  "",  "Arrays",  JOptionPane.INFORMATION_MESSAGE, icons[1]);
+		JOptionPane.showMessageDialog(null,  "",  "Arrays",  JOptionPane.INFORMATION_MESSAGE, icons[0]);
 		
 	}
 	
 	private void arrayInitialization() //just sets default values
 	{
 		
-		for (int index = 0; index < pokemonArray.length; index += 1)
+		for (int index = 0; index == pokemonArray.length; index += 1)
 		{
-			if (index % 2 == 0)
-			{
 			pokemonArray[index] = new PokemonModel();
-			}
-			else
-			{
-				pokemonArray[index] = new PokemonModel(myPokemon.getLevel(), myPokemon.getType(), myPokemon.getColor(), 
-						myPokemon.getCanEvolve(), myPokemon.getTypesList(), myPokemon.getColorsList());
-			}
 		}
 		
 	}
 	
 	public void lotsOfPokemon()
 	{
-		for (int index = 0; index < 11; index ++)
+		for (int index = 0; index < pokemonArray.length; index += 1)
 		{
 		myPokemon.setLevel(generateLevel());
 		myPokemon.setType(generateType());
 		myPokemon.setColor(generateColor());
 		myPokemon.setCanEvolve(generateCanEvolve());
-		
 		pokemonList.add(myPokemon);
+		
+		pokemonArray[index] = new PokemonModel(myPokemon.getLevel(), myPokemon.getType(), myPokemon.getColor(), 
+					myPokemon.getCanEvolve(), myPokemon.getTypesList(), myPokemon.getColorsList());
+		
 		myPokemon = new PokemonModel();
 		
-		if (index %2 == 0)
-		{
-			pokemonArray[index] = new PokemonModel();
-		}
-		else
-		{
-			pokemonArray[index] = new PokemonModel(myPokemon.getLevel(), myPokemon.getType(), myPokemon.getColor(), 
-					myPokemon.getCanEvolve(), myPokemon.getTypesList(), myPokemon.getColorsList());
-		}
+		//if (index % 2 == 0)
+		//{
+		//	pokemonArray[index] = new PokemonModel();
+		//}
+		//else
+		//{
+		//	pokemonArray[index] = new PokemonModel(myPokemon.getLevel(), myPokemon.getType(), myPokemon.getColor(), 
+		//			myPokemon.getCanEvolve(), myPokemon.getTypesList(), myPokemon.getColorsList());
+		//}
+		
 		}
 		
 	}
