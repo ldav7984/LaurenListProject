@@ -80,12 +80,12 @@ public class PokemonController
 		String color = myPokemon.getColorsList().get(randomIndex);
 		return color;
 	}
-	public Boolean generateCanEvolve()
+	public boolean generateCanEvolve()
 	{
 		int randomIndex = 1; //default
-		Boolean canEvolve = false; //default
-		randomIndex = (int)(Math.random()*3);
-		if (randomIndex % 10 == 0)
+		boolean canEvolve = false; //default
+		//randomIndex = (int)(Math.random()*100);
+		if ((int)(Math.random()*100) % 2 == 0)
 		{
 			canEvolve = true;
 		}

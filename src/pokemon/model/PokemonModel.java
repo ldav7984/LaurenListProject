@@ -6,7 +6,7 @@ public class PokemonModel
 	private int level;
 	private String type;
 	private String color;
-	private Boolean canEvolve;
+	private boolean canEvolve;
 	private String description;
 	private ArrayList<String> typesList;
 	private ArrayList<String> colorsList;
@@ -24,7 +24,7 @@ public class PokemonModel
 		buildLists();
 	}
 	
-	public PokemonModel(int level, String type, String color, Boolean canEvolve, 
+	public PokemonModel(int level, String type, String color, boolean canEvolve, 
 			ArrayList<String> typesList, ArrayList<String> colorsList)
 	{
 		this.typesList = getTypesList();
