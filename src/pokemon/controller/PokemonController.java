@@ -3,7 +3,6 @@ package pokemon.controller;
 import pokemon.model.PokemonModel;
 import java.util.ArrayList;
 
-
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 
@@ -23,25 +22,65 @@ public class PokemonController
 		myPokemon = new PokemonModel();
 		
 		icons = new ImageIcon[6];
+		icons[0] = new ImageIcon(getClass().getResource("/LaurenListProject/src/pokemon/view/images/Pokeball.png"));
+		icons[1] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
+		icons[2] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
+		icons[3] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
+		icons[4] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
+		icons[5] = new ImageIcon(getClass().getResource("/pokemon/view/images/Pokeball.png"));
+		
+		
 		pokemonArray = new PokemonModel[10];
+		pokemonArray[0] = new PokemonModel();
+		pokemonArray[1] = new PokemonModel();
+		pokemonArray[2] = new PokemonModel();
+		pokemonArray[3] = new PokemonModel();
+		pokemonArray[4] = new PokemonModel();
+		pokemonArray[5] = new PokemonModel();
+		pokemonArray[6] = new PokemonModel();
+		pokemonArray[7] = new PokemonModel();
+		pokemonArray[8] = new PokemonModel();
+		pokemonArray[9] = new PokemonModel();
+		
 	}
 	
 	
 	
 	public void start()
 	{
+		arrayInitialization();
+		
 		lotsOfPokemon();
 	
-		for (PokemonModel pokemon : pokemonList)
+		//for (PokemonModel pokemon : pokemonList)
+		//{
+		//	JOptionPane.showMessageDialog(null, pokemon);
+		//}
+		JOptionPane.showMessageDialog(null,  "",  "Arrays",  JOptionPane.INFORMATION_MESSAGE, icons[1]);
+		
+	}
+	
+	private void arrayInitialization() //just sets default values
+	{
+		
+		for (int index = 0; index < pokemonArray.length; index += 1)
 		{
-			JOptionPane.showMessageDialog(null, pokemon);
+			if (index % 2 == 0)
+			{
+			pokemonArray[index] = new PokemonModel();
+			}
+			else
+			{
+				pokemonArray[index] = new PokemonModel(myPokemon.getLevel(), myPokemon.getType(), myPokemon.getColor(), 
+						myPokemon.getCanEvolve(), myPokemon.getTypesList(), myPokemon.getColorsList());
+			}
 		}
 		
 	}
 	
 	public void lotsOfPokemon()
 	{
-		for (int timesRun = 1; timesRun < 8; timesRun ++)
+		for (int index = 0; index < 11; index ++)
 		{
 		myPokemon.setLevel(generateLevel());
 		myPokemon.setType(generateType());
@@ -51,6 +90,15 @@ public class PokemonController
 		pokemonList.add(myPokemon);
 		myPokemon = new PokemonModel();
 		
+		if (index %2 == 0)
+		{
+			pokemonArray[index] = new PokemonModel();
+		}
+		else
+		{
+			pokemonArray[index] = new PokemonModel(myPokemon.getLevel(), myPokemon.getType(), myPokemon.getColor(), 
+					myPokemon.getCanEvolve(), myPokemon.getTypesList(), myPokemon.getColorsList());
+		}
 		}
 		
 	}
