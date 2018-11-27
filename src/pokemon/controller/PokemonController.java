@@ -80,10 +80,10 @@ public class PokemonController
 	
 	public int generateLevel()
 	{
-		int level = (int)(Math.random()*20);
+		int level = (int) (Math.random() * 35);
 		if(level < 1)
 		{
-			level = level + 1;
+			level = 1;
 		}
 		return level;
 	}

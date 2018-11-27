@@ -89,7 +89,6 @@ public class PokemonModel
 		colorsList.add("gold");
 		colorsList.add("lime");
 		colorsList.add("teal");
-		colorsList.add("apricot");
 		colorsList.add("mint");
 		colorsList.add("lavender");
 		
