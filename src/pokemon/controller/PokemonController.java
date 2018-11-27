@@ -74,16 +74,6 @@ public class PokemonController
 		pokemonArray[index] = myPokemon;
 		myPokemon = new PokemonModel();
 		
-		//if (index % 2 == 0)
-		//{
-		//	pokemonArray[index] = new PokemonModel();
-		//}
-		//else
-		//{
-		//	pokemonArray[index] = new PokemonModel(myPokemon.getLevel(), myPokemon.getType(), myPokemon.getColor(), 
-		//			myPokemon.getCanEvolve(), myPokemon.getTypesList(), myPokemon.getColorsList());
-		//}
-		
 		}
 		
 	}
